@@ -1,95 +1,95 @@
 {
-  "name": "ngx-custom-validators",
-  "version": "9.1.0",
-  "description": "Angular custom directives for validation",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng-packagr -p package.json",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "publish": "npm publish ./dist"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rsaenen/ngx-custom-validators.git"
-  },
-  "keywords": [
-    "angular",
-    "angular2",
-    "angular 2",
-    "angular4",
-    "angular 4",
-    "angular5",
-    "angular 5",
-    "angular6",
-    "angular 6",
-    "directive",
-    "reactive",
-    "template",
-    "forms",
-    "validate",
-    "validation",
-    "validators",
-    "custom"
-  ],
-  "author": "Ralf Saenen <ralf.saenen@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/rsaenen/ngx-custom-validators/issues"
-  },
-  "ngPackage": {
-    "lib": {
-      "entryFile": "public_api.ts"
+    "name": "venus-custom-validators",
+    "version": "10.0.0",
+    "description": "Angular custom directives for validation",
+    "scripts": {
+        "ng": "ng",
+        "start": "ng serve",
+        "build": "ng-packagr -p package.json",
+        "test": "ng test",
+        "lint": "ng lint",
+        "e2e": "ng e2e",
+        "publish": "npm publish ./dist"
     },
-    "whitelistedNonPeerDependencies": [
-      "@angular/*",
-      "bootstrap",
-      "moment",
-      "rxjs",
-      "tslib",
-      "zone.js"
-    ]
-  },
-  "homepage": "https://github.com/rsaenen/ngx-custom-validators#readme",
-  "private": false,
-  "peerDependencies": {},
-  "dependencies": {
-    "@angular/common": "~9.1.0",
-    "@angular/compiler": "~9.1.0",
-    "@angular/core": "~9.1.0",
-    "@angular/forms": "~9.1.0",
-    "@angular/platform-browser": "~9.1.0",
-    "@angular/platform-browser-dynamic": "~9.1.0",
-    "@angular/router": "~9.1.0",
-    "moment": "^2.24.0",
-    "rxjs": "~6.5.4",
-    "tslib": "^1.10.0",
-    "zone.js": "~0.10.2"
-  },
-  "devDependencies": {
-    "@angular-devkit/build-angular": "~0.901.0",
-    "@angular-devkit/schematics": "~9.1.0",
-    "@angular/cli": "~9.1.0",
-    "@angular/compiler-cli": "~9.1.0",
-    "@angular/language-service": "~9.1.0",
-    "@types/node": "^12.11.1",
-    "@types/jasmine": "~3.5.0",
-    "@types/jasminewd2": "~2.0.3",
-    "bootstrap": "^4.1.3",
-    "codelyzer": "^5.1.2",
-    "jasmine-core": "~3.5.0",
-    "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~4.3.0",
-    "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage-istanbul-reporter": "~2.1.0",
-    "karma-jasmine": "~2.0.1",
-    "karma-jasmine-html-reporter": "^1.4.2",
-    "ng-packagr": "^5.3.0",
-    "protractor": "~5.4.3",
-    "ts-node": "~8.3.0",
-    "tslint": "~5.18.0",
-    "typescript": "~3.7.5"
-  }
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/eriklive/venus-custom-validators.git"
+    },
+    "keywords": [
+        "angular",
+        "angular2",
+        "angular 2",
+        "angular4",
+        "angular 4",
+        "angular5",
+        "angular 5",
+        "angular6",
+        "angular 6",
+        "directive",
+        "reactive",
+        "template",
+        "forms",
+        "validate",
+        "validation",
+        "validators",
+        "custom"
+    ],
+    "author": "Ralf Saenen <ralf.saenen@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/eriklive/venus-custom-validators/issues"
+    },
+    "ngPackage": {
+        "lib": {
+            "entryFile": "public_api.ts"
+        },
+        "whitelistedNonPeerDependencies": [
+            "@angular/*",
+            "bootstrap",
+            "moment",
+            "rxjs",
+            "tslib",
+            "zone.js"
+        ]
+    },
+    "homepage": "https://github.com/eriklive/venus-custom-validators#readme",
+    "private": false,
+    "peerDependencies": {},
+    "dependencies": {
+        "@angular/common": "~9.1.0",
+        "@angular/compiler": "~9.1.0",
+        "@angular/core": "~9.1.0",
+        "@angular/forms": "~9.1.0",
+        "@angular/platform-browser": "~9.1.0",
+        "@angular/platform-browser-dynamic": "~9.1.0",
+        "@angular/router": "~9.1.0",
+        "moment": "^2.24.0",
+        "rxjs": "~6.5.4",
+        "tslib": "^1.10.0",
+        "zone.js": "~0.10.2"
+    },
+    "devDependencies": {
+        "@angular-devkit/build-angular": "~0.901.0",
+        "@angular-devkit/schematics": "~9.1.0",
+        "@angular/cli": "~9.1.0",
+        "@angular/compiler-cli": "~9.1.0",
+        "@angular/language-service": "~9.1.0",
+        "@types/jasmine": "~3.5.0",
+        "@types/jasminewd2": "~2.0.3",
+        "@types/node": "^12.11.1",
+        "bootstrap": "^4.1.3",
+        "codelyzer": "^5.1.2",
+        "jasmine-core": "~3.5.0",
+        "jasmine-spec-reporter": "~4.2.1",
+        "karma": "~4.3.0",
+        "karma-chrome-launcher": "~3.1.0",
+        "karma-coverage-istanbul-reporter": "~2.1.0",
+        "karma-jasmine": "~2.0.1",
+        "karma-jasmine-html-reporter": "^1.4.2",
+        "ng-packagr": "^5.3.0",
+        "protractor": "~5.4.3",
+        "ts-node": "~8.3.0",
+        "tslint": "~5.18.0",
+        "typescript": "~3.7.5"
+    }
 }
