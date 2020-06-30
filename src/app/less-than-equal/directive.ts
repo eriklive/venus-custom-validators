@@ -1,17 +1,17 @@
 import { Directive, Input, forwardRef, OnInit, OnChanges, SimpleChanges } from '@angular/core';
-import { NG_VALIDATORS, Validator, ValidatorFn, AbstractControl } from '@angular/forms';
+import { NG_VALIDATORS, Validator, ValidatorFn, FormControl } from '@angular/forms';
 
 import { lte } from './validator';
 
 const LESS_THAN_EQUAL_VALIDATOR: any = {
   provide: NG_VALIDATORS,
   useExisting: forwardRef(() => LessThanEqualValidator),
-  multi: true
+  multi: true,
 };
 
 @Directive({
   selector: '[lte][formControlName],[lte][formControl],[lte][ngModel]',
-  providers: [LESS_THAN_EQUAL_VALIDATOR]
+  providers: [LESS_THAN_EQUAL_VALIDATOR],
 })
 export class LessThanEqualValidator implements Validator, OnInit, OnChanges {
   @Input() lte: number;
@@ -34,7 +34,7 @@ export class LessThanEqualValidator implements Validator, OnInit, OnChanges {
     }
   }
 
-  validate(c: AbstractControl): {[key: string]: any} {
+  validate(c: FormControl): { [key: string]: any } {
     return this.validator(c);
   }
 

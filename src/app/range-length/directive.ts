@@ -1,17 +1,17 @@
 import { Directive, Input, forwardRef, OnInit, OnChanges, SimpleChanges } from '@angular/core';
-import { NG_VALIDATORS, Validator, ValidatorFn, AbstractControl } from '@angular/forms';
+import { NG_VALIDATORS, Validator, ValidatorFn, FormControl } from '@angular/forms';
 
 import { rangeLength } from './validator';
 
 const RANGE_LENGTH_VALIDATOR: any = {
   provide: NG_VALIDATORS,
   useExisting: forwardRef(() => RangeLengthValidator),
-  multi: true
+  multi: true,
 };
 
 @Directive({
   selector: '[rangeLength][formControlName],[rangeLength][formControl],[rangeLength][ngModel]',
-  providers: [RANGE_LENGTH_VALIDATOR]
+  providers: [RANGE_LENGTH_VALIDATOR],
 })
 export class RangeLengthValidator implements Validator, OnInit, OnChanges {
   @Input() rangeLength: [number];
@@ -34,7 +34,7 @@ export class RangeLengthValidator implements Validator, OnInit, OnChanges {
     }
   }
 
-  validate(c: AbstractControl): {[key: string]: any} {
+  validate(c: FormControl): { [key: string]: any } {
     return this.validator(c);
   }
 

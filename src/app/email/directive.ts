@@ -1,20 +1,20 @@
 import { Directive, forwardRef } from '@angular/core';
-import { NG_VALIDATORS, Validator, AbstractControl } from '@angular/forms';
+import { NG_VALIDATORS, Validator, FormControl } from '@angular/forms';
 
 import { email } from './validator';
 
 const EMAIL_VALIDATOR: any = {
   provide: NG_VALIDATORS,
   useExisting: forwardRef(() => EmailValidator),
-  multi: true
+  multi: true,
 };
 
 @Directive({
   selector: '[ngvemail][formControlName],[ngvemail][formControl],[ngvemail][ngModel]',
-  providers: [EMAIL_VALIDATOR]
+  providers: [EMAIL_VALIDATOR],
 })
 export class EmailValidator implements Validator {
-  validate(c: AbstractControl): {[key: string]: any} {
+  validate(c: FormControl): { [key: string]: any } {
     return email(c);
   }
 }

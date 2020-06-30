@@ -1,17 +1,17 @@
 import { Directive, Input, forwardRef, OnInit, OnChanges, SimpleChanges } from '@angular/core';
-import { NG_VALIDATORS, Validator, ValidatorFn, AbstractControl } from '@angular/forms';
+import { NG_VALIDATORS, Validator, ValidatorFn, FormControl } from '@angular/forms';
 
 import { maxDate } from './validator';
 
 const MAX_DATE_VALIDATOR: any = {
   provide: NG_VALIDATORS,
   useExisting: forwardRef(() => MaxDateValidator),
-  multi: true
+  multi: true,
 };
 
 @Directive({
   selector: '[maxDate][formControlName],[maxDate][formControl],[maxDate][ngModel]',
-  providers: [MAX_DATE_VALIDATOR]
+  providers: [MAX_DATE_VALIDATOR],
 })
 export class MaxDateValidator implements Validator, OnInit, OnChanges {
   @Input() maxDate;
@@ -34,7 +34,7 @@ export class MaxDateValidator implements Validator, OnInit, OnChanges {
     }
   }
 
-  validate(c: AbstractControl): {[key: string]: any} {
+  validate(c: FormControl): { [key: string]: any } {
     return this.validator(c);
   }
 

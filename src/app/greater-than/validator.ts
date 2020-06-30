@@ -1,8 +1,8 @@
-import { AbstractControl, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { FormControl, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { isPresent } from '../util/lang';
 
 export const gt = (value: number): ValidatorFn => {
-  return (control: AbstractControl): ValidationErrors => {
+  return (control: FormControl): ValidationErrors => {
     if (!isPresent(value)) {
       return null;
     }

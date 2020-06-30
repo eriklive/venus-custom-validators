@@ -1,17 +1,17 @@
 import { Directive, Input, forwardRef, OnInit, OnChanges, SimpleChanges } from '@angular/core';
-import { NG_VALIDATORS, Validator, ValidatorFn, AbstractControl } from '@angular/forms';
+import { NG_VALIDATORS, Validator, ValidatorFn, FormControl } from '@angular/forms';
 
 import { uuid } from './validator';
 
 const UUID_VALIDATOR: any = {
   provide: NG_VALIDATORS,
   useExisting: forwardRef(() => UUIDValidator),
-  multi: true
+  multi: true,
 };
 
 @Directive({
   selector: '[uuid][formControlName],[uuid][formControl],[uuid][ngModel]',
-  providers: [UUID_VALIDATOR]
+  providers: [UUID_VALIDATOR],
 })
 export class UUIDValidator implements Validator, OnInit, OnChanges {
   @Input() uuid;
@@ -34,7 +34,7 @@ export class UUIDValidator implements Validator, OnInit, OnChanges {
     }
   }
 
-  validate(c: AbstractControl): {[key: string]: any} {
+  validate(c: FormControl): { [key: string]: any } {
     return this.validator(c);
   }
 

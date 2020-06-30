@@ -1,17 +1,17 @@
 import { Directive, Input, forwardRef, OnInit, OnChanges, SimpleChanges } from '@angular/core';
-import { NG_VALIDATORS, Validator, ValidatorFn, AbstractControl } from '@angular/forms';
+import { NG_VALIDATORS, Validator, ValidatorFn, FormControl } from '@angular/forms';
 
 import { gt } from './validator';
 
 const GREATER_THAN_VALIDATOR: any = {
   provide: NG_VALIDATORS,
   useExisting: forwardRef(() => GreaterThanValidator),
-  multi: true
+  multi: true,
 };
 
 @Directive({
   selector: '[gt][formControlName],[gt][formControl],[gt][ngModel]',
-  providers: [GREATER_THAN_VALIDATOR]
+  providers: [GREATER_THAN_VALIDATOR],
 })
 export class GreaterThanValidator implements Validator, OnInit, OnChanges {
   @Input() gt: number;
@@ -34,7 +34,7 @@ export class GreaterThanValidator implements Validator, OnInit, OnChanges {
     }
   }
 
-  validate(c: AbstractControl): {[key: string]: any} {
+  validate(c: FormControl): { [key: string]: any } {
     return this.validator(c);
   }
 

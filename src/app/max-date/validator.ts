@@ -1,4 +1,4 @@
-import { AbstractControl, FormControl, NgModel, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { FormControl, NgModel, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { isDate, isPresent, parseDate } from '../util/lang';
 
 export const maxDate = (maxInput: any): ValidatorFn => {
@@ -6,7 +6,7 @@ export const maxDate = (maxInput: any): ValidatorFn => {
   let subscribe = false;
   let maxValue = maxInput;
   const isForm = maxInput instanceof FormControl || maxInput instanceof NgModel;
-  return (control: AbstractControl): ValidationErrors => {
+  return (control: FormControl): ValidationErrors => {
     if (!subscribe && isForm) {
       subscribe = true;
       maxInput.valueChanges.subscribe(() => {
@@ -43,6 +43,10 @@ export const maxDate = (maxInput: any): ValidatorFn => {
       value = value();
     }
 
-    return d <= new Date(value).getTime() ? null : (isForm ? { maxDate: { control: maxInput, value: maxInput.value } } : { maxDate: { value: maxValue, control: undefined } });
+    return d <= new Date(value).getTime()
+      ? null
+      : isForm
+      ? { maxDate: { control: maxInput, value: maxInput.value } }
+      : { maxDate: { value: maxValue, control: undefined } };
   };
 };

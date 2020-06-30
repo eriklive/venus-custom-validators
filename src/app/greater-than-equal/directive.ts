@@ -1,17 +1,17 @@
 import { Directive, Input, forwardRef, OnInit, OnChanges, SimpleChanges } from '@angular/core';
-import { NG_VALIDATORS, Validator, ValidatorFn, AbstractControl } from '@angular/forms';
+import { NG_VALIDATORS, Validator, ValidatorFn, FormControl } from '@angular/forms';
 
 import { gte } from './validator';
 
 const GREATER_THAN_EQUAL_VALIDATOR: any = {
   provide: NG_VALIDATORS,
   useExisting: forwardRef(() => GreaterThanEqualValidator),
-  multi: true
+  multi: true,
 };
 
 @Directive({
   selector: '[gte][formControlName],[gte][formControl],[gte][ngModel]',
-  providers: [GREATER_THAN_EQUAL_VALIDATOR]
+  providers: [GREATER_THAN_EQUAL_VALIDATOR],
 })
 export class GreaterThanEqualValidator implements Validator, OnInit, OnChanges {
   @Input() gte: number;
@@ -34,7 +34,7 @@ export class GreaterThanEqualValidator implements Validator, OnInit, OnChanges {
     }
   }
 
-  validate(c: AbstractControl): {[key: string]: any} {
+  validate(c: FormControl): { [key: string]: any } {
     return this.validator(c);
   }
 

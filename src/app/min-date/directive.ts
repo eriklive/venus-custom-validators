@@ -1,17 +1,17 @@
 import { Directive, Input, forwardRef, OnInit, OnChanges, SimpleChanges } from '@angular/core';
-import { NG_VALIDATORS, Validator, ValidatorFn, AbstractControl } from '@angular/forms';
+import { NG_VALIDATORS, Validator, ValidatorFn, FormControl } from '@angular/forms';
 
 import { minDate } from './validator';
 
 const MIN_DATE_VALIDATOR: any = {
   provide: NG_VALIDATORS,
   useExisting: forwardRef(() => MinDateValidator),
-  multi: true
+  multi: true,
 };
 
 @Directive({
   selector: '[minDate][formControlName],[minDate][formControl],[minDate][ngModel]',
-  providers: [MIN_DATE_VALIDATOR]
+  providers: [MIN_DATE_VALIDATOR],
 })
 export class MinDateValidator implements Validator, OnInit, OnChanges {
   @Input() minDate;
@@ -34,7 +34,7 @@ export class MinDateValidator implements Validator, OnInit, OnChanges {
     }
   }
 
-  validate(c: AbstractControl): {[key: string]: any} {
+  validate(c: FormControl): { [key: string]: any } {
     return this.validator(c);
   }
 

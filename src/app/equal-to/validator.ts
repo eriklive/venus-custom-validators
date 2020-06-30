@@ -1,9 +1,9 @@
-import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
+import { FormControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 
-export const equalTo = (equalControl: AbstractControl): ValidatorFn => {
+export const equalTo = (equalControl: FormControl): ValidatorFn => {
   let subscribe = false;
 
-  return (control: AbstractControl): ValidationErrors => {
+  return (control: FormControl): ValidationErrors => {
     if (!subscribe) {
       subscribe = true;
       equalControl.valueChanges.subscribe(() => {

@@ -1,5 +1,5 @@
 import { Directive, forwardRef } from '@angular/core';
-import { NG_VALIDATORS, Validator, AbstractControl } from '@angular/forms';
+import { NG_VALIDATORS, Validator, FormControl } from '@angular/forms';
 
 import { creditCard } from './validator';
 
@@ -14,7 +14,7 @@ const CREDIT_CARD_VALIDATOR: any = {
   providers: [CREDIT_CARD_VALIDATOR]
 })
 export class CreditCardValidator implements Validator {
-  validate(c: AbstractControl): {[key: string]: any} {
+  validate(c: FormControl): {[key: string]: any} {
     return creditCard(c);
   }
 }

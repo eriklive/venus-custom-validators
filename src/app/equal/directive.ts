@@ -1,17 +1,17 @@
 import { Directive, Input, forwardRef, OnInit, SimpleChanges, OnChanges } from '@angular/core';
-import { NG_VALIDATORS, Validator, ValidatorFn, AbstractControl } from '@angular/forms';
+import { NG_VALIDATORS, Validator, ValidatorFn, FormControl } from '@angular/forms';
 
 import { equal } from './validator';
 
 const EQUAL_VALIDATOR: any = {
   provide: NG_VALIDATORS,
   useExisting: forwardRef(() => EqualValidator),
-  multi: true
+  multi: true,
 };
 
 @Directive({
   selector: '[equal][formControlName],[equal][formControl],[equal][ngModel]',
-  providers: [EQUAL_VALIDATOR]
+  providers: [EQUAL_VALIDATOR],
 })
 export class EqualValidator implements Validator, OnInit, OnChanges {
   @Input() equal: any;
@@ -34,7 +34,7 @@ export class EqualValidator implements Validator, OnInit, OnChanges {
     }
   }
 
-  validate(c: AbstractControl): {[key: string]: any} {
+  validate(c: FormControl): { [key: string]: any } {
     return this.validator(c);
   }
 

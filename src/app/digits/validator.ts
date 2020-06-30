@@ -1,7 +1,7 @@
-import { AbstractControl, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { FormControl, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { isPresent } from '../util/lang';
 
-export const digits: ValidatorFn = (control: AbstractControl): ValidationErrors => {
+export const digits: ValidatorFn = (control: FormControl): ValidationErrors => {
   if (isPresent(Validators.required(control))) {
     return null;
   }

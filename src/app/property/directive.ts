@@ -1,17 +1,17 @@
 import { Directive, Input, forwardRef, OnInit, OnChanges, SimpleChanges } from '@angular/core';
-import { NG_VALIDATORS, Validator, ValidatorFn, AbstractControl } from '@angular/forms';
+import { NG_VALIDATORS, Validator, ValidatorFn, FormControl } from '@angular/forms';
 
 import { property } from './validator';
 
 const PROPERTY_VALIDATOR: any = {
   provide: NG_VALIDATORS,
   useExisting: forwardRef(() => PropertyValidator),
-  multi: true
+  multi: true,
 };
 
 @Directive({
   selector: '[property][formControlName],[property][formControl],[property][ngModel]',
-  providers: [PROPERTY_VALIDATOR]
+  providers: [PROPERTY_VALIDATOR],
 })
 export class PropertyValidator implements Validator, OnInit, OnChanges {
   @Input() property: string;
@@ -34,7 +34,7 @@ export class PropertyValidator implements Validator, OnInit, OnChanges {
     }
   }
 
-  validate(c: AbstractControl): {[key: string]: any} {
+  validate(c: FormControl): { [key: string]: any } {
     return this.validator(c);
   }
 
