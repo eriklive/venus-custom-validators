@@ -1,6 +1,6 @@
 {
   "name": "venus-custom-validators",
-  "version": "10.0.2",
+  "version": "10.0.3",
   "description": "Angular custom directives for validation",
   "scripts": {
     "ng": "ng",
