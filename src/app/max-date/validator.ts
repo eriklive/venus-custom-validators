@@ -2,7 +2,7 @@ import { FormControl, NgModel, ValidationErrors, ValidatorFn, Validators } from 
 import { isDate, isPresent, parseDate } from '../util/lang';
 
 export const maxDate = (maxInput: any): ValidatorFn => {
-  let value;
+  let value: any;
   let subscribe = false;
   let maxValue = maxInput;
   const isForm = maxInput instanceof FormControl || maxInput instanceof NgModel;

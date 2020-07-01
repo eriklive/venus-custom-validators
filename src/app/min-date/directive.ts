@@ -14,7 +14,7 @@ const MIN_DATE_VALIDATOR: any = {
   providers: [MIN_DATE_VALIDATOR],
 })
 export class MinDateValidator implements Validator, OnInit, OnChanges {
-  @Input() minDate;
+  @Input() minDate: any;
 
   private validator: ValidatorFn;
   private onChange: () => void;

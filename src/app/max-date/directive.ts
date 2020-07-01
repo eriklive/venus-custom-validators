@@ -14,7 +14,7 @@ const MAX_DATE_VALIDATOR: any = {
   providers: [MAX_DATE_VALIDATOR],
 })
 export class MaxDateValidator implements Validator, OnInit, OnChanges {
-  @Input() maxDate;
+  @Input() maxDate: any;
 
   private validator: ValidatorFn;
   private onChange: () => void;

@@ -2,7 +2,7 @@ import { FormControl, NgModel, ValidationErrors, ValidatorFn, Validators } from 
 import { isDate, isPresent, parseDate } from '../util/lang';
 
 export const minDate = (minInput: any): ValidatorFn => {
-  let value;
+  let value: any;
   let subscribe = false;
   let minValue = minInput;
   const isForm = minInput instanceof FormControl || minInput instanceof NgModel;

@@ -1,6 +1,6 @@
 {
   "name": "venus-custom-validators",
-  "version": "10.0.0",
+  "version": "10.0.2",
   "description": "Angular custom directives for validation",
   "scripts": {
     "ng": "ng",
@@ -34,14 +34,14 @@
     "validators",
     "custom"
   ],
-  "author": "Ralf Saenen <ralf.saenen@gmail.com>",
+  "author": "Erik Silva <eriklive2@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/eriklive/venus-custom-validators/issues"
   },
   "ngPackage": {
     "lib": {
-      "entryFile": "public_api.ts"
+      "entryFile": "index.ts"
     },
     "whitelistedNonPeerDependencies": [
       "@angular/*",

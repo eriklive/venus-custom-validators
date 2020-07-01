@@ -14,7 +14,7 @@ const UUID_VALIDATOR: any = {
   providers: [UUID_VALIDATOR],
 })
 export class UUIDValidator implements Validator, OnInit, OnChanges {
-  @Input() uuid;
+  @Input() uuid: any;
 
   private validator: ValidatorFn;
   private onChange: () => void;
